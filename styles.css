@@ -1,0 +1,192 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+}
+
+body{
+    background: #eee;
+}
+
+main{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: auto;
+}
+
+.app-body{
+    width: 350px;
+    height: auto;
+}
+
+.main-head{
+    font-size: 22px;
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.app-header{
+    width: 100%;
+    height: 50px;
+    position: relative;
+}
+
+.search-box{
+    width: 100%;
+    height: 50px;
+    font-size: 19px;
+    font-weight: 500;
+    border-radius: 10px;
+    padding-left: 50px;
+    padding-right: 75px;
+    outline: none;
+    border: none;
+    box-shadow: 0px 0px 1px 2px rgb(0, 0, 0,.5);
+}
+
+.search-icon, .submit{
+    position: absolute;
+    top: -40px;
+}
+
+.search-icon{
+    position: absolute;
+    top: 0;
+    left: 20px;
+    font-size: 20px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.submit{
+    width: 60px;
+    position: absolute;
+    top: 4.5%;
+    height: 90%;
+    right: 4px;
+    border-radius: 8px;
+    background: plum;
+    border: none;
+    outline: none;
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    transition: all 0.15s ease-in;
+    cursor: pointer;
+}
+
+.submit:hover{
+    opacity: 90%;
+}
+
+.submit:active{
+    background-color: blueviolet;
+}
+
+.app-container{
+    margin-top: 40px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    padding: 20px 15px;
+}
+
+.img-cont{
+    width: 80px;
+    height: 80px;
+}
+
+.img-cont img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.first-section{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: auto;
+    margin-bottom: 30px;
+}
+
+.user-pro{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 4px;
+}
+
+.users-name{
+    font-size: 17px;
+    font-weight: 700;
+}
+
+.user-username{
+    font-size: 14px;
+    color: rgb(43, 144, 226);
+}
+
+.user-join{
+    font-size: 14px;
+}
+
+.user-bio{
+    width: 98%;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 15px;
+}
+
+.user-repos{
+    width: 100%;
+    height: 65px;
+    border-radius: 10px;
+    background-color: grey;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.one{
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+}
+
+.mean{
+    font-size: 12px;
+}
+
+.num{
+    font-size: 16px;
+    font-weight: 600;
+    width: 100%;
+    text-align: center;
+}
+
+.third-section{
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+
+.locate, .link, .TwitterAcc, .homepage{
+    display: flex;
+    column-gap: 15px;
+    align-items: center;
+}
+
+.icon{
+    font-size: 22px;
+}
+
+.content{
+    font-size: 13px;
+}
