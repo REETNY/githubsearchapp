@@ -197,7 +197,7 @@ main{
         display: grid;
         justify-content: center;
         align-items: flex-start;
-        padding: 90px 0 0 0;
+        padding: 90px 0 30px 0;
     }
 
     .app-body{
