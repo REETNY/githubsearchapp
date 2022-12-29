@@ -199,4 +199,10 @@ main{
         align-items: flex-start;
         padding: 90px 0 0 0;
     }
+
+    .app-body{
+        width: 90%;
+        display: block;
+        margin: 0 auto;
+    }
 }
