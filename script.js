@@ -2,9 +2,29 @@ const appCont = document.querySelector(".app-container");
 const form = document.querySelector(".form-body");
 const submitBtn = document.querySelector("#submit");
 const input = document.querySelector("#search");
+const fullBody = document.querySelector("main");
 
 const APIURL = `https://api.github.com/users/`;
 
+const imgDom = ["github", "github2", "github3", "github4", "github5"];
+
+let iterator = 0;
+
+window.onload = () => {
+    changeBG(iterator)
+}
+
+function changeBG(iterator){
+    fullBody.style.background = `url(/BG/${imgDom[iterator]}.jpg)`;
+    fullBody.style.backgroundPosition = `center top`;
+    fullBody.style.backgroundSize = `cover`;
+    fullBody.style.backgroundRepeat = `no-repeat`;
+}
+
+
+function ranNum(){
+    return Math.floor(Math.random() * imgDom.length);
+}
 
 async function getUserBySearch(text){
     const serverResponse = await fetch(APIURL + text);
@@ -26,8 +46,9 @@ submitBtn.addEventListener("click", async() => {
     let userInput = input.value;
     input.value = "";
     if(userInput === "")return;
+    changeBG(ranNum())
     let userData = await getUserBySearch(userInput);
-    showUserData(userData)
+    showUserData(userData);
 })
 
 function showUserData(userData){
