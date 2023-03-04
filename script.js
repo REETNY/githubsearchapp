@@ -4,6 +4,10 @@ const submitBtn = document.querySelector("#submit");
 const input = document.querySelector("#search");
 const fullBody = document.querySelector("main");
 
+const error = document.querySelector(".error");
+const closeMsg = document.querySelector(".close");
+const errorMsg = document.querySelector(".errorMsg");
+
 const APIURL = `https://api.github.com/users/`;
 
 const imgDom = ["github", "github2", "github3", "github4", "github5"];
@@ -43,18 +47,36 @@ form.addEventListener("submit", (e) => {
 });
 
 submitBtn.addEventListener("click", async() => {
-    let userInput = input.value;
-    input.value = "";
-    if(userInput === "")return;
-    changeBG(ranNum())
-    let userData = await getUserBySearch(userInput);
-    showUserData(userData);
+    if(input.value == ""){
+        errorMsg.textContent = `Please enter a username!`;
+        error.style.transform = `translateX(0vw)`
+        setTimeout( () => {
+            error.style.transform = `translateX(100vw)`
+        }, 5000)
+    }else{
+        changeBG(ranNum());
+        let userInput = input.value;
+        input.value = "";
+        if(userInput === "")return;
+        let userData = await getUserBySearch(userInput);
+
+        if(userData.hasOwnProperty("message") && userData.message == "Not Found"){
+            errorMsg.textContent = `Sorry user not found!`;
+            error.style.transform = `translateX(0vw)`
+            setTimeout( () => {
+                error.style.transform = `translateX(100vw)`
+            }, 5000)
+        }else{
+            showUserData(userData);
+        }
+        
+    }
 })
 
 function showUserData(userData){
     appCont.innerHTML = "";
     let data = userData;
-    if(data === null) return;
+    if(data === null || data == undefined || data == "") return;
     let creationDate = data.created_at.slice(0,10);
     let creationYear = creationDate.slice(0,4);
     let creationMonth = creationDate.slice(5,7);
@@ -141,3 +163,6 @@ function showUserData(userData){
     `
 }
 
+closeMsg.addEventListener("click", () => {
+    error.style.transform = `translateX(100vw)`
+})
